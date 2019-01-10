@@ -1,0 +1,55 @@
+.logo-row {
+    
+}
+.fal .fa-shopping-basket {
+    color: aqua;
+}
+.navbar {
+    background: darkblue;
+    padding-left: 123px;
+}
+
+#mainPageCarousel {
+    height: 75vh;
+    min-height: 500px;
+    ;
+}
+
+#mainPageCarousel .carousel-inner,
+#mainPageCarousel .carousel-item,
+#mainPageCarousel .carousel-item img {
+    height: 120%;   
+}
+
+#mainPageCarousel .carousel-item img {
+    object-fit: cover;
+   
+}
+.products {
+    margin-top: 40px;
+    padding-top: 5px;
+}
+.products .btn {
+    align-content: center;
+}
+
+#pirmakat {
+    background-image: url("baldukojos.jpg");
+    height: 40vh;
+    object-fit: cover;
+}
+#antrakat {
+    background-image: url("skardosgaminiai.jpeg");
+}
+.products h4  {
+    color: black;
+    align-items: flex-start;
+}
+.products h4 .btn {
+    display: flex;
+    align-content: center;
+}
+footer {
+    margin-top: 5px;
+    height: 25%;
+}
