@@ -1,0 +1,19 @@
+{
+    "name": "laura/php_projektas",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lorencija",
+            "email": "lorencija@gmail.com"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "1.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "KCS\\": "app/"
+        }
+    }
+}
