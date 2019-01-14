@@ -58,8 +58,12 @@ footer {
 #apiemus p {
     text-align: left;
 }
+.apiemusdivas {
+    background-color: antiquewhite
+}
 
 #kontaktai {
+    background-color: antiquewhite;
     padding-left: 2em;
     padding-right: 2em;
     padding-top: 2em;
