@@ -18,9 +18,9 @@ class DB
 
     public function __construct(
         $host = 'localhost',
-        $dbname = 'php_project',
-        $user = 'phpproject',
-        $password = 'mano_pass'
+        $dbname = 'gabora',
+        $user = 'root',
+        $password = ''
     )
     {
         try{
