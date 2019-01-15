@@ -68,10 +68,23 @@ footer {
     color: #0b2e13;
     font-size: 2em;
 }
-.box {
-align-items: center;
+.galery .soninis_meniu a{
+    background: #17a2b8;
+    color: white;
+    padding: 0.5em;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 3);
+
+}
+.galery {
+    padding-left: 3em;
+    background-image: linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url("../images/blue.jpeg");;
+
 }
 
-#popupas-uzklausa {
 
+.galery h3{
+    padding-top: 1em;
+    padding-bottom: 1em;
+font-size: 19px;
 }

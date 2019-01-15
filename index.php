@@ -87,20 +87,36 @@
     <div class="products" id="product">
       <div class="container">
         <div class="row">
-          <div id="pirmakat" class="col-6">
-            <a href="#">
-              <h4>Baldinės kojelės</h4>
-              <a class="btn btn-primary" href="#" role="button">Placiau</a>
-            </a>
 
-          </div>
-          <div id="antrakat" class="col-6">
-            <a href="#">
 
-              <h4>Skardos gaminiai</h4>
-              <a class="btn btn-primary" href="#" role="button">Placiau</a>
-            </a>
-          </div>
+              <?php
+
+
+              require __DIR__ . '\vendor\autoload.php';
+
+
+              try {
+                  $db = new \KCS\lib\DB\DB();
+
+                  $products = $db->showAllProducts();
+                  // var_dump($products);
+
+                  foreach ($products as $product) {
+                      echo "<div id='{$product->getProductGrImage()}' class='col-6'>";
+                      echo
+                      "<a href='showproduct.php?tb_name={$product->getPrTable()}'><h4>{$product->getProduct()}</h4></a><br>";
+                      echo "  <a class='btn btn-primary' href='galerija.php' role='button'>Placiau</a>";
+                      echo "</div>";
+                  }
+              } catch (\Exception $e) {
+                  echo 'Err..';
+              }
+
+
+              ?>
+
+
+
         </div>
       </div>
     </div>

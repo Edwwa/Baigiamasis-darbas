@@ -18,9 +18,9 @@ class DB
 
     public function __construct(
         $host = 'localhost',
-        $dbname = 'gabora',
-        $user = 'root',
-        $password = ''
+        $dbname = 'php_project',
+        $user = 'phpproject',
+        $password = 'mano_pass'
     )
     {
         try{
@@ -29,7 +29,7 @@ class DB
             $this->user = $user;
             $this->password = $password;
             if (!$this->conn) {
-                $this->conn = new \PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+                $this->conn = new \PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password, array(\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
             }
         } catch (\PDOException $exception){
             $this->logger = new Logger('name');
@@ -40,14 +40,25 @@ class DB
     }
 
     public function showAllProducts()
+{
+    $stmt = $this->conn->prepare('SELECT * FROM products');
+    $stmt->execute();
+    $stmt->setFetchMode(\PDO::FETCH_CLASS, Product::class);
+    $rezultatai = $stmt->fetchAll();
+//var_dump($rezultatai);
+    return $rezultatai;
+}
+
+    public function showAllProductListForMeniu($table)
     {
-        $stmt = $this->conn->prepare('SELECT * FROM products');
+        $stmt = $this->conn->prepare('SELECT * FROM '.$table);
         $stmt->execute();
         $stmt->setFetchMode(\PDO::FETCH_CLASS, Product::class);
         $rezultatai = $stmt->fetchAll();
 
         return $rezultatai;
     }
+
 
     public function showAllProductList($table)
     {

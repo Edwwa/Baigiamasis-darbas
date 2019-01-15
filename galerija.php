@@ -59,30 +59,51 @@
   </nav>
 
 
-  <div class="galery">
+
+  <div class="galery ">
       <h3>Produktai</h3>
-      <?php
+      <div class="row">
 
-      require __DIR__ . '\vendor\autoload.php';
+          <div class="col-lg-3 col-sm-12 soninis_meniu">
+              <?php
+
+              require __DIR__ . '\vendor\autoload.php';
+
+              try {
+                  $db = new \KCS\lib\DB\DB();
+
+                  $products = $db->showAllProducts();
+
+                  //  var_dump($products);
+
+                  foreach ($products as $product) {
+                      echo
+                      "<a href='showproduct.php?tb_name={$product->getPrTable()}'>{$product->getProduct()}</a><br><br>";
+                      $tb_name=$product->getPrMeniu();
+                      $pr_meniu =$db->showAllProductListForMeniu($tb_name);
+                      foreach ($pr_meniu as $product1) {
+                          echo
+                          "<ul><a href='showproduct.php?tb_name={$product1->getPrTable()}'>{$product1->getProduct()}</a></ul>";
+                      }
+
+                  }
+              } catch (\Exception $e) {
+                  echo 'Err..';
+              }
 
 
-      try {
-          $db = new \KCS\lib\DB\DB();
-
-          $products = $db->showAllProducts();
-          //  var_dump($products);
-
-          foreach ($products as $product) {
-              echo
-              "<a href='showproduct.php?tb_name={$product->getPrTable()}'>{$product->getProduct()}</a><br>";
-          }
-      } catch (\Exception $e) {
-          echo 'Err..';
-      }
+              ?>
+          </div>
 
 
-      ?>
-    
+          <div class="col-lg-9 col-sm-12 element">
+
+
+          </div>
+      </div>
+  </div>
+
+
   </div>
    
 

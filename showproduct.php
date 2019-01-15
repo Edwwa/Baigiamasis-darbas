@@ -60,11 +60,12 @@
 </nav>
 
 
-<div class="galery">
+<div class="galery ">
+
     <h3>Produktai</h3>
     <div class="row">
 
-        <div class="col-lg-2 col-sm-12">
+        <div class="col-lg-3 col-sm-12 soninis_meniu">
             <?php
 
             require __DIR__ . '\vendor\autoload.php';
@@ -73,11 +74,19 @@
                 $db = new \KCS\lib\DB\DB();
 
                 $products = $db->showAllProducts();
+
                 //  var_dump($products);
 
                 foreach ($products as $product) {
                     echo
-                    "<a href='showproduct.php?tb_name={$product->getPrTable()}'>{$product->getProduct()}</a><br>";
+                    "<a href='showproduct.php?tb_name={$product->getPrTable()}'>{$product->getProduct()}</a><br><br>";
+                    $tb_name=$product->getPrMeniu();
+                    $pr_meniu =$db->showAllProductListForMeniu($tb_name);
+                    foreach ($pr_meniu as $product1) {
+                    echo
+                    "<ul><a href='showproduct.php?tb_name={$product1->getPrTable()}'>{$product1->getProduct()}</a></ul>";
+                    }
+
                 }
             } catch (\Exception $e) {
                 echo 'Err..';
@@ -88,7 +97,7 @@
         </div>
 
 
-        <div class="col-lg-10 col-sm-12 element">
+        <div class="col-lg-9 col-sm-12 element">
 
 <?php
 require __DIR__ . '\vendor\autoload.php';
@@ -105,13 +114,12 @@ try {
     }
 
     $products = $db->showAllProductList($table_name);
-    // var_dump($products);
+     //var_dump($products);
 
     foreach ($products as $product) {
 
-        echo "<img onclick='div_show()' src='images/{$product->getImage()}' alt='kojeles' width='25%'>".
-        "<span> {$product->getName()}" . " {$product->getPrice()} Eur" . " {$product->getQuantity()} vnt." . "</span><br><br>"
-        ;
+        echo "<img src='images/{$product->getImage()}' alt='kojeles' width='25%'>".
+        "<span> {$product->getName()}" . " {$product->getPrice()} Eur" . " {$product->getQuantity()} vnt." . "</span><br><br>";
     }
 
                } catch (\Exception $e) {
@@ -119,16 +127,6 @@ try {
             }
 
             ?>
-            <div class="box" style="padding-left: 25em; display: flex; border-color: #00b1f5"  >
-            <div id="popupas-uzklausa" style="align-content: center" style="border: 10px" class="col-12">
-                <form class="popup">
-                    <input type="name" placeholder="Vardas"><br>
-                    <input type="email" placeholder="El. pastas"><br>
-                    <input type="text" placeholder="Norimas kiekis"><br>
-                    <button type="submit" class="btn">Siusti</button>
-                </form>
-            </div></div>
-
         </div>
     </div>
 </div>
@@ -136,10 +134,9 @@ try {
 </div>
 
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="popupas.js"></script>
+<script src="js / jquery - 3.3.1 . min . js"></script>
+<script src="js / popper . min . js"></script>
+<script src="js / bootstrap . min . js"></script>
 </body>
 
 </html>
