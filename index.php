@@ -121,10 +121,35 @@
       </div>
     </div>
   </div>
-  <footer style="background-color:gray">
-    <h6>Visos teises saugomos</h6>
+  <footer >
+      <div class="page-end">
+          <div class="row">
+
+              <div class="col-lg-4 col-sm-12">
+                  <p>Visos teisės saugomos &copy 2019 Gabora           </p>
+              </div>
+
+              <div class="col-lg-4 col-sm-12">
+                  <h5>Sususiekite:</h5>
 
 
+                  <p>M. Yčo g. 22,
+                      <br>
+                      LT-46456 Kaunas</p>
+
+                  <a href="mailto:info@gabora.lt">info@gabora.lt</a>
+              </div>
+
+              <div class="col-lg-4 col-sm-12">
+                  <h5>Draugaukime:</h5>
+
+                  <i class="fab fa-facebook"></i>
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-google-plus-square"></i>
+              </div>
+
+          </div>
+      </div>
   </footer>
 
 

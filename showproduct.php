@@ -134,6 +134,37 @@ try {
 </div>
 
 
+<footer >
+    <div class="page-end">
+        <div class="row">
+
+            <div class="col-lg-4 col-sm-12">
+                <p>Visos teisės saugomos &copy 2019 Gabora           </p>
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+                <h5>Sususiekite:</h5>
+
+
+                <p>M. Yčo g. 22,
+                    <br>
+                    LT-46456 Kaunas</p>
+
+                <a href="mailto:info@gabora.lt">info@gabora.lt</a>
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+                <h5>Draugaukime:</h5>
+
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-google-plus-square"></i>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
 <script src="js / jquery - 3.3.1 . min . js"></script>
 <script src="js / popper . min . js"></script>
 <script src="js / bootstrap . min . js"></script>

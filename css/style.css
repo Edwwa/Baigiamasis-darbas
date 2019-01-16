@@ -28,7 +28,9 @@ background: #00b1f5;
 }
 .products {
     margin-top: 40px;
-    padding-top: 5px;
+    padding-top: 40px;
+    margin-bottom: 40px;
+
 }
 .products .btn {
     align-content: center;
@@ -38,9 +40,17 @@ background: #00b1f5;
     background-image: url("baldukojos.jpg");
     height: 40vh;
     object-fit: cover;
+    border-radius: 8px;
+  padding-top: 2em;
+    padding-left: 2em;
 }
 #antrakat {
     background-image: url("skardosgaminiai.jpeg");
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 8px;
+    padding-top: 2em;
+    padding-left: 2em;
 }
 .products h4  {
     color: black;
@@ -51,14 +61,23 @@ background: #00b1f5;
     align-content: center;
 }
 footer {
-    margin-top: 5px;
+    padding-top: 3em;
     height: 25%;
+    text-align: center;
+    background: #dee2e6;
+}
+footer i{
+font-size: 2em;
 }
 
-#apiemus p {
+.apiemus p {
     text-align: left;
 }
-
+.apiemus {
+    padding-left: 5em;
+    padding-top: 3em;
+    padding-right: 5em;
+}
 #kontaktai {
     padding-left: 2em;
     padding-right: 2em;
@@ -74,4 +93,25 @@ align-items: center;
 
 #popupas-uzklausa {
 
+}
+
+.galery .soninis_meniu a{
+    background: #17a2b8;
+    color: white;
+    padding: 0.5em;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 3);
+    width: 100%;
+}
+.galery {
+    padding-left: 3em;
+    background-image: linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.99)),url("../images/blue.jpeg");;
+
+}
+
+
+.galery h3{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 19px;
 }
